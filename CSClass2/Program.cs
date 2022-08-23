@@ -18,6 +18,14 @@ namespace CSClass2
             Console.WriteLine(wantedInt.Value);
             Console.WriteLine(wantedDouble.Value);
 
+
+
+            Products p = new Products();
+            Console.WriteLine("오늘의 점심 메뉴는 " + p[2] + "입니다");
+            p[2] = "단무지";
+            Console.WriteLine("오늘의 점심 메뉴는 " + p[2] + "입니다");
+
+
         }
     }
 }
