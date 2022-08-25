@@ -43,13 +43,72 @@ namespace CSClass2
             NextPos(x, y, vx, vy, out x, out y);
             Console.WriteLine("다음 좌표: (" + x + ", " + y + ")");
 
+            Point point;
+            point.x = 10;
+            point.y = 10;
+            point = new Point(100, 200);
+            point  = new Point();
+            Console.WriteLine(point.x + " / " + point.y);
+
+            PointClass pcA = new PointClass(10, 20);
+            PointClass pcB = pcA;
+            pcB.x = 100;
+            pcB.y =200;
+            Console.WriteLine(pcA.x + " / " + pcA.y);
+            Console.WriteLine(pcB.x + " / " + pcB.y);
+
+            PointsStruct psA = new PointsStruct(10, 20);
+            PointsStruct psB = psA;
+            psB.x = 100;
+            psB.y = 200;
+            Console.WriteLine(psA.x + " / " + psA.y);
+            Console.WriteLine(psB.x + " / " + psB.y);
+
         }
+        struct PointsStruct { 
+            public int x;
+            public int y;
+
+            public PointsStruct(int x, int y)
+            {
+                this.x = x;
+                this.y = y;
+            }
+        }
+        class PointClass
+        {
+            public int x;
+            public int y;
+
+            public PointClass(int x, int y)
+            {
+                this.x = x;
+                this.y = y;
+            }
+        }
+
+
+
+
+        struct Point
+        {
+            public int x;
+            public int y;
+            public string testA;
+            public string testB;
+
+            public Point(int x, int y,string s) {
+                this.x= x;
+                this.y = y;
+                this.testA = s;
+                this.testB = s;
+            }
+        }
+
         static void NextPos(int x, int y, int vx, int vy, out int rx, out int ry)
         {
             rx = x + vx;
             ry = y + vy;
         }
-
     }
-}
 }
