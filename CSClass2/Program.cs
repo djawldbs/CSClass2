@@ -46,7 +46,7 @@ namespace CSClass2
             Point point;
             point.x = 10;
             point.y = 10;
-            point = new Point(100, 200);
+            //point = new Point(100, 200);
             point  = new Point();
             Console.WriteLine(point.x + " / " + point.y);
 
@@ -63,6 +63,20 @@ namespace CSClass2
             psB.y = 200;
             Console.WriteLine(psA.x + " / " + psA.y);
             Console.WriteLine(psB.x + " / " + psB.y);
+
+
+            List<Product> list = new List<Product>() {
+                new Product(){Name="고구마",Price=1500 },
+                new Product(){Name="사과",Price=2400 },
+                new Product(){Name="바나나",Price=1000 },
+                new Product(){Name="배",Price=3000 }
+            };
+            list.Sort();
+            foreach(var item in list)
+            {
+                Console.WriteLine(item);
+            }
+
 
         }
         struct PointsStruct { 
