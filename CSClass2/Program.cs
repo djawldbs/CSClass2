@@ -79,8 +79,10 @@ namespace CSClass2
                 Console.WriteLine(item);
                 }
             }
-
-
+            IBasic test = new TestClas();
+            test.TestInstanceMethod();
+            //test.foobar();
+            (test as TestClas).foobar();
         }
         struct PointsStruct { 
             public int x;
@@ -130,6 +132,24 @@ namespace CSClass2
             void IDisposable.Dispose()
             {
                 Console.WriteLine("Dispose() 메서드를 호출했습니다.");
+            }
+        }
+
+
+        class TestClas : IBasic
+        {
+            public int foobar()
+            {
+                return -1;
+            }
+            public int TestProperty {
+                get => throw new NotImplementedException();
+                set => throw new NotImplementedException();
+            }
+
+            public int TestInstanceMethod()
+            {
+                throw new NotImplementedException();
             }
         }
     }
