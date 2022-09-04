@@ -64,17 +64,20 @@ namespace CSClass2
             Console.WriteLine(psA.x + " / " + psA.y);
             Console.WriteLine(psB.x + " / " + psB.y);
 
+            using (Dummy dummy = new Dummy())
+            {
 
-            List<Product> list = new List<Product>() {
+                List<Product> list = new List<Product>() {
                 new Product(){Name="고구마",Price=1500 },
                 new Product(){Name="사과",Price=2400 },
                 new Product(){Name="바나나",Price=1000 },
                 new Product(){Name="배",Price=3000 }
-            };
-            list.Sort();
-            foreach(var item in list)
-            {
+                };
+                list.Sort();
+                foreach(var item in list)
+                {
                 Console.WriteLine(item);
+                }
             }
 
 
@@ -101,9 +104,6 @@ namespace CSClass2
             }
         }
 
-
-
-
         struct Point
         {
             public int x;
@@ -123,6 +123,14 @@ namespace CSClass2
         {
             rx = x + vx;
             ry = y + vy;
+        }
+
+        class Dummy : IDisposable
+        {
+            void IDisposable.Dispose()
+            {
+                Console.WriteLine("Dispose() 메서드를 호출했습니다.");
+            }
         }
     }
 }
